@@ -19,6 +19,7 @@ export class HerosComponent implements OnInit {
   heros: Hero[];
 
   selectedHero: Hero;
+
   onSelect(hero: Hero): void {
     this.selectedHero = hero;
   }
@@ -30,7 +31,9 @@ export class HerosComponent implements OnInit {
   }
 
   getHeros(): void {
-    this.heros = this.heroService.getHeros();
+    console.log('HeroComponent.getHeros()');
+    this.heroService.getHeros()
+      .subscribe(heros => this.heros = heros);
   }
 
 }
