@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
 import { HerosComponent } from './heros/heros.component';
+import { HeroDetailComponent }  from './hero-detail/hero-detail.component';
+import { DashboardComponent }   from './dashboard/dashboard.component';
 
 const routes: Routes = [
-  { path: 'heros', component: HerosComponent }
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path: 'heros', component: HerosComponent },
+  { path: 'dashboard', component: DashboardComponent },
+  { path: 'detail/:id', component: HeroDetailComponent }
 ];
 
 @NgModule({
@@ -12,17 +16,3 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-
-/*
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
-
-
-const routes: Routes = [];
-
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
-*/

@@ -1,5 +1,7 @@
 <p>Hero Component</p>
 
+<p>HERO COMPONENT START /////////////////////////////////////////</p>
+
 <h2>{{hero.name | uppercase}} Details</h2>
 <div><span>id: </span>{{hero.id}}</div>
 <div><span>name: </span>{{hero.name}}</div>
@@ -13,11 +15,11 @@
 <p>heros-component.hero-list</p>
 
 <h2>Heros List</h2>
-<ul class="heros" *ngFor="let hero of heros" 
-  (click)="onSelect(hero)"
-  [class.selected]="hero === selectedHero">
+<ul class="heros" *ngFor="let hero of heros">
   <li>
-    <span class="badge">{{hero.id}}</span> {{hero.name}}
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">{{hero.id}}</span> {{hero.name}}
+    </a>
   </li>
 </ul>
 
@@ -40,3 +42,5 @@
 <p>heros-component app-hero-detail element</p>
 
 <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+
+<p>HERO COMPONENT END /////////////////////////////////////////</p>
